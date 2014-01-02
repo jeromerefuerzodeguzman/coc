@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('login', 'UserController@login');
+Route::any('logout', 'UserController@logout');
+Route::post('authenticate', 'UserController@authenticate');
+Route::get('dashboard', 'DashboardController@index');
