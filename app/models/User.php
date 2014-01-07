@@ -49,4 +49,23 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+
+	protected $fillable = array(
+				'username',
+				'password',
+				);
+
+	public static function validate_login($data) {
+		$rules = array(
+			'username' => 'required',
+			'password' => 'required'
+		);
+
+		return Validator::make($data,$rules);
+	}
+	
+	public function account() {
+			return $this->hasOne('Account');
+	}
+
 }

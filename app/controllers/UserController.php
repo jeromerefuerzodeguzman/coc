@@ -33,7 +33,12 @@ class UserController extends BaseController {
 			);
 
 			if (Auth::attempt($credentials)) {
-					return Redirect::to('dashboard');
+				if(Account::is_admin(Auth::user()->id)) {
+			   		//Redirect to ADMIN PAGE
+			   	} else {
+			   		//Redirect to NON-ADMIN PAGE
+			   		return Redirect::to('dashboard');
+			   	}
 			} else {
 				return Redirect::to('login')
 		            ->with('flash_error', 'Your username/password was incorrect.')

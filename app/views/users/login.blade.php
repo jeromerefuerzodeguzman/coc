@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>LUMO Sales Tracker</title>
+	<title>COC</title>
 	{{ HTML::style('css/normalize.css') }}
 	{{ HTML::style('css/foundation.css') }}
 	{{ HTML::style('css/main.css') }}
