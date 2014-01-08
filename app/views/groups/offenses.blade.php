@@ -22,16 +22,22 @@
 											<table class="large-12">
 												<thead>
 													<tr>
-														<th class="large-1">Section</th>
-														<th>Description</th>
-														<th class="large-1">Action</th>
+														<th class="large-2 text-justify">Description</th>
+														<th class="large-2 text-center">1ST</th>
+														<th class="large-2 text-center">2ND</th>
+														<th class="large-2 text-center">3RD</th>
+														<th class="large-2 text-center">4TH</th>
+														<th class="large-2 text-center">5TH</th>
 													</tr>
 												</thead>
 												<tbody>
 													@foreach($offenses as $offense)
 													<tr>
-														<td>{{ $offense->section }}</td>
-														<td>{{ $offense->description }}</td>
+														<td class="text-justify">{{ $offense->section.'. '.$offense->description }}</td>
+														<td>{{ Form::select('size', $actions) }}</td>
+														<td></td>
+														<td></td>
+														<td></td>
 														<td></td>
 													</tr>
 													@endforeach
@@ -92,7 +98,6 @@
 							@else
 								{{ Form::textarea('description', Input::old('description'), array('rows' => '15')) }}
 							@endif
-							
 						</div>
 					</div>
 				</div>

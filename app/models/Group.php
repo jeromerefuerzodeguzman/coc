@@ -32,5 +32,6 @@
 
 			return Redirect::to('group/'.$this->id.'/offense');
 		}
+
 	}
 ?>
