@@ -3,16 +3,16 @@
 class UserController extends BaseController {
 
 	/**
-	 * login view
-	 * @return [type] [description]
+	 * Login view
+	 *
 	 */
 	public function login() {
 		return View::make('users.login');
 	}
 
 	/**
-	 * logout
-	 * @return [type] [description]
+	 * Logout
+	 *
 	 */
 	public function logout() {
 		Auth::logout();
@@ -20,6 +20,11 @@ class UserController extends BaseController {
 		return Redirect::to('login');
 	}
 
+
+	/**
+	 * Authentication
+	 *
+	 */
 	public function authenticate() {
 		$validation = User::validate_login(Input::all());
 
@@ -48,5 +53,8 @@ class UserController extends BaseController {
 		}
 
 	}
+
+	
+
 
 }	

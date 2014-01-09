@@ -14,7 +14,7 @@ class CreateOffenseTable extends Migration {
 		Schema::create('offenses', function($table){
 			$table->increments('id');
 			$table->integer('group_id');	
-			$table->string('section', 10);
+			$table->integer('section');
 			$table->string('description');
 			$table->timestamps();
 		});

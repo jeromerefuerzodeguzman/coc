@@ -191,9 +191,9 @@
 @endsection
 
 @section('scripts')
-@if(count($errors)>0)
-	<script type="text/javascript">
-		$('#myModal').foundation('reveal', 'open');
-	</script>
-@endif
+	@if(count($errors)>0)
+		<script type="text/javascript">
+		        $('#myModal').foundation('reveal', 'open');
+		</script>
+	@endif
 @endsection
