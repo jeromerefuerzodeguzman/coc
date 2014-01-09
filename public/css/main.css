@@ -88,3 +88,8 @@
 .offense.table thead th {
 	border: 1px solid gray;
 }
+
+table tr td {
+	font-size: 11px !important;
+
+}
