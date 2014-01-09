@@ -33,13 +33,14 @@ class GroupController extends BaseController {
 	 */
 	public function offenses($id) {
 		$group = Group::find($id);
-
+		$actions_list[0] = '';
 		$actions = Action::lists('description', 'id');
+		$actions_list += $actions;
 
 		return View::make('groups.offenses')
 			->with('group', $group)
 			->with('offenses', $group->offenses)
-			->with('actions', $actions);
+			->with('actions', $actions_list);
 	}
 
 
@@ -50,7 +51,7 @@ class GroupController extends BaseController {
 	public function add_offense($id) {
 		$group = Group::find($id);
 
-		$offense = $group->try_create(Input::only('description', 'section'));
+		$offense = $group->try_create(Input::only('description', 'section'), Input::only('1st', '2nd', '3rd', '4th', '5th'));
 
 		return $offense;
 	}

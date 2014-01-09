@@ -34,11 +34,14 @@
 													@foreach($offenses as $offense)
 													<tr>
 														<td class="text-justify">{{ $offense->section.'. '.$offense->description }}</td>
-														<td>{{ Form::select('size', $actions) }}</td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
+														<?php $ctr = 0; ?>
+														@foreach($offense->actions as $action)
+															<?php $ctr++; ?>
+															<td>{{ $action->description }}</td>
+														@endforeach
+														@for($i=0;$i<(5-$ctr);$i++)
+															<td></td>
+														@endfor
 													</tr>
 													@endforeach
 												</tbody>
@@ -97,6 +100,72 @@
 								<small class="error">{{ $errors->first('description') }}</small>
 							@else
 								{{ Form::textarea('description', Input::old('description'), array('rows' => '15')) }}
+							@endif
+						</div>
+					</div>
+					<h6>Offense</h6>
+					<div class="row">
+						<div class="large-3 columns">
+							<label for="right-label" class="right inline">1ST</label>
+						</div>
+						<div class="large-9 columns">
+							@if($errors->has('1st'))
+								{{ Form::select('1st', $actions, '', array('class'=>'error')) }}
+								<small class="error">{{ $errors->first('1st') }}</small>
+							@else
+								{{ Form::select('1st', $actions) }}
+							@endif
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-3 columns">
+							<label for="right-label" class="right inline">2ND</label>
+						</div>
+						<div class="large-9 columns">
+							@if($errors->has('2nd'))
+								{{ Form::select('2nd', $actions, '', array('class'=>'error')) }}
+								<small class="error">{{ $errors->first('2nd') }}</small>
+							@else
+								{{ Form::select('2nd', $actions) }}
+							@endif
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-3 columns">
+							<label for="right-label" class="right inline">3RD</label>
+						</div>
+						<div class="large-9 columns">
+							@if($errors->has('3rd'))
+								{{ Form::select('3rd', $actions, '', array('class'=>'error')) }}
+								<small class="error">{{ $errors->first('3rd') }}</small>
+							@else
+								{{ Form::select('3rd', $actions) }}
+							@endif
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-3 columns">
+							<label for="right-label" class="right inline">4TH</label>
+						</div>
+						<div class="large-9 columns">
+							@if($errors->has('4th'))
+								{{ Form::select('4th', $actions, '', array('class'=>'error')) }}
+								<small class="error">{{ $errors->first('4th') }}</small>
+							@else
+								{{ Form::select('4th', $actions) }}
+							@endif
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-3 columns">
+							<label for="right-label" class="right inline">5TH</label>
+						</div>
+						<div class="large-9 columns">
+							@if($errors->has('5th'))
+								{{ Form::select('5th', $actions, '', array('class'=>'error')) }}
+								<small class="error">{{ $errors->first('5th') }}</small>
+							@else
+								{{ Form::select('5th', $actions) }}
 							@endif
 						</div>
 					</div>
