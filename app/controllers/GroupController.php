@@ -34,9 +34,12 @@ class GroupController extends BaseController {
 	public function offenses($id) {
 		$group = Group::find($id);
 
+		$actions = Action::lists('description', 'id');
+
 		return View::make('groups.offenses')
 			->with('group', $group)
-			->with('offenses', $group->offenses);
+			->with('offenses', $group->offenses)
+			->with('actions', $actions);
 	}
 
 

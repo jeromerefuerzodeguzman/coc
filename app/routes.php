@@ -22,3 +22,7 @@ Route::get('groups', 'GroupController@index');
 Route::get('group/{id}', 'GroupController@view');
 Route::get('group/{id}/offense', 'GroupController@offenses');
 Route::post('group/{id}/offense/add', 'GroupController@add_offense');
+
+Route::get('action', 'ActionController@index');
+Route::get('actions', 'ActionController@index');
+Route::post('action/add', 'ActionController@add');

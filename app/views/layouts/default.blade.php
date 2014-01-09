@@ -3,7 +3,7 @@
 	<head>
 		<title>NSI Code of Conduct</title>
 		{{ HTML::style('css/normalize.css') }}
-		{{ HTML::style('css/foundation.css') }}
+		{{ HTML::style('css/foundation.min.css') }}
 		{{ HTML::style('css/main.css') }}
 		{{ HTML::style('css/datepicker.css') }}
 		{{ HTML::style('css/foundation-icons-general/stylesheets/general_foundicons.css') }}
@@ -40,6 +40,23 @@
 			<div class="row">
 				<div class="large-3 columns">
 					<!-- SIDEBAR -->
+					<?php 
+						$options = app()->make('router')->getCurrentRoute()->getOptions();
+						$_uses = isset($options['_uses']) ? $options['_uses'] : null;
+						$route = explode('@', $_uses);
+						$controller = $route[0];
+					?>
+					<div class="section-container accordion" data-section="accordion">
+						<section <?php echo $controller=='GroupController'?'class="active"':''; ?>>
+							<p class="title" data-section-title>{{ HTML::link("groups", "Groups") }}</p>
+						</section>
+						<section <?php echo $controller=='ActionController'?'class="active"':''; ?>>
+							<p class="title" data-section-title>{{ HTML::link("actions", "Actions") }}</p>
+						</section>
+						<section <?php echo $controller=='UserController'?'class="active"':''; ?>>
+							<p class="title" data-section-title>{{ HTML::link("users", "Users") }}</p>
+						</section>
+					</div>
 				</div>
 				<div class="large-9 columns main-content">
 					<h3>@yield('title')</h3>
