@@ -30,7 +30,7 @@
 												<tbody>
 													@foreach($offenses as $offense)
 													<tr>
-														<td>{{ $offense->section }}</td>
+														<td>{{ $offense->group_id }}.{{ $offense->section }}</td>
 														<td>{{ $offense->description }}</td>
 														<td></td>
 													</tr>

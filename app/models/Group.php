@@ -16,7 +16,7 @@
 			$validator = Validator::make(
 			    $info,
 			    array(
-			        'section' => 'required|unique:offenses',
+			        'section' => 'required|numeric',
 			        'description' => 'required'
 			    )
 			);

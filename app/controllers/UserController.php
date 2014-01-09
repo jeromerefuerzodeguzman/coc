@@ -3,16 +3,16 @@
 class UserController extends BaseController {
 
 	/**
-	 * login view
-	 * @return [type] [description]
+	 * Login view
+	 *
 	 */
 	public function login() {
 		return View::make('users.login');
 	}
 
 	/**
-	 * logout
-	 * @return [type] [description]
+	 * Logout
+	 *
 	 */
 	public function logout() {
 		Auth::logout();
@@ -20,6 +20,11 @@ class UserController extends BaseController {
 		return Redirect::to('login');
 	}
 
+
+	/**
+	 * Authentication
+	 *
+	 */
 	public function authenticate() {
 		$validation = User::validate_login(Input::all());
 
@@ -48,5 +53,33 @@ class UserController extends BaseController {
 		}
 
 	}
+
+	/**
+	 * List of offense group in list format
+	 *
+	 */
+	public function dashboard() {
+		$groups = Group::all();
+		$count = $groups->count();
+
+		return View::make('users.dashboard')
+				->with('groups', $groups)
+				->with('count', $count);
+
+	}
+
+	/**
+	 * Viewing of the sections of each group
+	 *
+	 */
+	public function dashboard_viewgroup($id) {
+		$group = Group::find($id);
+
+		return View::make('users.dashboard_offenses')
+			->with('group', $group)
+			->with('offenses', $group->offenses);
+		
+	}
+
 
 }	

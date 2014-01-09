@@ -65,6 +65,23 @@
 	margin: 5px 0;
 }
 
-table thead tr th, table tbody tr td {
-	font-size: 11px !important;
+.panel a:link{
+	color: #FfFfFf;
+}
+
+.panel a:visited{
+	color: #FfFfFf;
+}
+
+.panel a:hover{
+	color: #000000;
+}
+
+.panel a:active{
+	color: #FfFfFf;
+}
+
+.offense.table tbody tr td {
+	background-color: #C9C1C1;
+
 }
