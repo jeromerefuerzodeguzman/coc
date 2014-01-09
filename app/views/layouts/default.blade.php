@@ -47,6 +47,9 @@
 						$controller = $route[0];
 					?>
 					<div class="section-container accordion" data-section="accordion">
+						<section <?php echo $controller=='DashboardController'?'class="active"':''; ?>>
+							<p class="title" data-section-title>{{ HTML::link("dashboard", "Dashboard") }}</p>
+						</section>
 						<section <?php echo $controller=='GroupController'?'class="active"':''; ?>>
 							<p class="title" data-section-title>{{ HTML::link("groups", "Groups") }}</p>
 						</section>

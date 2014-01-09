@@ -13,14 +13,14 @@ Offenses Against
 				@if($ctr==0)
 					<tr>
 						<td>
-							<div class="panel radius callout">
+							<div class="panel radius callout text-center">
 								{{ HTML::link("dashboard/".$group->id, strtoupper($group->description)) }}</td>
 							</div>
 						</td>
 					<?php $ctr++; ?>
 				@else
 						<td>
-							<div class="panel radius callout">
+							<div class="panel radius callout text-center">
 								{{ HTML::link("dashboard/".$group->id, strtoupper($group->description)) }}</td>
 							</div>
 						</td>

@@ -80,6 +80,10 @@
 }
 
 .offense.table tbody tr td {
-	background-color: #C9C1C1;
+	background-color: #DAD8D8;
+	border: 1px solid gray;
+}
 
+.offense.table thead th {
+	border: 1px solid gray;
 }

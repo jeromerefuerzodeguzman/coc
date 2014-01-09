@@ -8,14 +8,14 @@
 	<div class="row">
 		<div class="large-12 columns">
 			<table class="offense table">
-				<thead>
+				<thead >
 					<tr>
 						<th width="150px">Section</th>
-						<th>1st Offense</th>
-						<th>2nd Offense</th>
-						<th>3rd Offense</th>
-						<th>4th Offense</th>
-						<th>5th Offense</th>
+						<th>1st</th>
+						<th>2nd</th>
+						<th>3rd</th>
+						<th>4th</th>
+						<th>5th</th>
 					</tr>
 				</thead>
 				<tbody>
