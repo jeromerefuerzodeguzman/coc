@@ -5,55 +5,55 @@
 @endsection
 
 @section('content')
-        @if(isset($group))
-                <div class="row">
+@if(isset($group))
+<div class="row">
+    <div class="large-12 columns">
+        <div class="section-container tabs" data-section="tabs">
+            <section>
+                <p class="title" data-section-title>{{ HTML::link("group/".$group->id, "Info"); }}</p>
+            </section>
+            <section class="active">
+                <p class="title" data-section-title><a href="#info">Offense</a></p>
+                <div class="content" data-section-content>
+                    <div class="row">
                         <div class="large-12 columns">
-                                <div class="section-container tabs" data-section="tabs">
-                                        <section>
-                                                <p class="title" data-section-title>{{ HTML::link("group/".$group->id, "Info"); }}</p>
-                                        </section>
-                                        <section class="active">
-                                                <p class="title" data-section-title><a href="#info">Offense</a></p>
-                                                <div class="content" data-section-content>
-                                                        <div class="row">
-                                                                <div class="large-12 columns">
-                                                                        <div class="row">
-                                                                                <div class="large-12 columns">
-                                                                                        <table class="large-12">
-                                                                                                <thead>
-                                                                                                        <tr>
-                                                                                                                <th class="large-2 text-justify">Description</th>
-                                                                                                                <th class="large-2 text-center">1ST</th>
-                                                                                                                <th class="large-2 text-center">2ND</th>
-                                                                                                                <th class="large-2 text-center">3RD</th>
-                                                                                                                <th class="large-2 text-center">4TH</th>
-                                                                                                                <th class="large-2 text-center">5TH</th>
-                                                                                                        </tr>
-                                                                                                </thead>
-                                                                                                <tbody>
-                                                                                                        @foreach($offenses as $offense)
-                                                                                                        <tr>
-                                                                                                                <td class="text-justify">{{ $offense->section.'. '.$offense->description }}</td>
-                                                                                                                <td>{{ Form::select('size', $actions) }}</td>
-                                                                                                                <td></td>
-                                                                                                                <td></td>
-                                                                                                                <td></td>
-                                                                                                                <td></td>
-                                                                                                        </tr>
-                                                                                                        @endforeach
-                                                                                                </tbody>
-                                                                                        </table>
-                                                                                        <a href="#" data-tooltip class="has-tip tip-right" title="Add new offense" data-reveal-id="myModal"><i class="general foundicon-plus"></i></a>
-                                                                                </div>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                        </section>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <table class="large-12">
+                                        <thead>
+                                            <tr>
+                                                <th class="large-2 text-justify">Description</th>
+                                                <th class="large-2 text-center">1ST</th>
+                                                <th class="large-2 text-center">2ND</th>
+                                                <th class="large-2 text-center">3RD</th>
+                                                <th class="large-2 text-center">4TH</th>
+                                                <th class="large-2 text-center">5TH</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($offenses as $offense)
+                                            <tr>
+                                                <td class="text-justify">{{ $offense->section.'. '.$offense->description }}</td>
+                                                <td>{{ Form::select('size', $actions) }}</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                    <a href="#" data-tooltip class="has-tip tip-right" title="Add new offense" data-reveal-id="myModal"><i class="general foundicon-plus"></i></a>
                                 </div>
+                            </div>
                         </div>
+                    </div>
                 </div>
-        @endif
+            </section>
+        </div>
+    </div>
+</div>
+@endif
 @endsection
 
 @section('popups')
