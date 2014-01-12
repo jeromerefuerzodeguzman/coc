@@ -22,7 +22,7 @@
 											<table class="large-12">
 												<thead>
 													<tr>
-														<th class="large-2 text-justify">Description</th>
+														<th class="large-2 text-left">Description</th>
 														<th class="large-2 text-center">1ST</th>
 														<th class="large-2 text-center">2ND</th>
 														<th class="large-2 text-center">3RD</th>

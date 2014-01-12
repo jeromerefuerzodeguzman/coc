@@ -20,6 +20,7 @@ Route::get('dashboard/{id}', 'DashboardController@dashboard_viewgroup');
 Route::get('group', 'GroupController@index');
 Route::get('groups', 'GroupController@index');
 Route::get('group/{id}', 'GroupController@view');
+Route::post('group/{id}/edit', 'GroupController@edit');
 Route::get('group/{id}/offense', 'GroupController@offenses');
 Route::post('group/{id}/offense/add', 'GroupController@add_offense');
 

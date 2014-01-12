@@ -55,4 +55,17 @@ class GroupController extends BaseController {
 
 		return $offense;
 	}
+
+
+	/**
+	 * Modify group.
+	 *
+	 */
+	public function edit($id) {
+		$group = Group::find($id);
+
+		$update = $group->modify(Input::only('description'));
+
+		return $update;
+	}
 }

@@ -11,6 +11,10 @@
 		}
 
 
+		/**
+		 * Create new Group
+		 *
+		 */
 		public function try_create($info, $actions) {
 			
 			$validator = Validator::make(
@@ -42,5 +46,34 @@
 			return Redirect::to('group/'.$this->id.'/offense');
 		}
 
+
+		/**
+		 * Edit Group
+		 *
+		 */
+		public function modify($info) {
+			$validator = Validator::make(
+			    $info,
+			    array(
+			        'description' => 'required'
+			    )
+			);
+
+			if ($validator->fails()) {
+				Session::flash('from', 'edit');
+				
+				return Redirect::to('groups')
+					->with('from', 'edit')
+					->withErrors($validator);
+			}
+			
+			//somehow validation successful
+			
+			//edit description
+			$this->description = $info['description'];
+			$this->save();
+
+			return Redirect::to('groups');
+		}
 	}
 ?>
