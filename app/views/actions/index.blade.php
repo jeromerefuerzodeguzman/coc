@@ -49,7 +49,6 @@ Actions
 							@else
 								{{ Form::textarea('description', Input::old('description'), array('rows' => '15')) }}
 							@endif
-							
 						</div>
 					</div>
 				</div>
@@ -70,7 +69,6 @@ Actions
 		{{ Form::close() }}
 	</div>
 </div>
-
 @endsection
 
 @section('scripts')
