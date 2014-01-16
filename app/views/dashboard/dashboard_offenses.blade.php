@@ -11,11 +11,11 @@
 				<thead >
 					<tr>
 						<th width="150px">Section</th>
-						<th>1st</th>
-						<th>2nd</th>
-						<th>3rd</th>
-						<th>4th</th>
-						<th>5th</th>
+						<th width="114px">1st</th>
+						<th width="114px">2nd</th>
+						<th width="114px">3rd</th>
+						<th width="114px">4th</th>
+						<th width="114px">5th</th>
 					</tr>
 				</thead>
 				<tbody>

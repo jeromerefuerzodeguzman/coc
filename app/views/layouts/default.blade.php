@@ -57,7 +57,13 @@
 							<p class="title" data-section-title>{{ HTML::link("actions", "Actions") }}</p>
 						</section>
 						<section <?php echo $controller=='UserController'?'class="active"':''; ?>>
-							<p class="title" data-section-title>{{ HTML::link("users", "Users") }}</p>
+							<p class="title" data-section-title>{{ HTML::link("#", "Users") }}</p>
+							<div class="content" data-section-content>
+								<ul class="side-nav">
+									<li>{{ HTML::link("manage_users", "Manage Users") }}</li>
+									<li>{{ HTML::link("registration", "Create") }}</li>
+								</ul>
+							</div>
 						</section>
 					</div>
 				</div>

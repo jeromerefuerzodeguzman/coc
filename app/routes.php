@@ -26,3 +26,7 @@ Route::post('group/{id}/offense/add', 'GroupController@add_offense');
 Route::get('action', 'ActionController@index');
 Route::get('actions', 'ActionController@index');
 Route::post('action/add', 'ActionController@add');
+
+Route::any('registration', 'UserController@registration');
+Route::any('manage_users', 'UserController@manage_users');
+Route::post('add_user', 'UserController@add_user');
