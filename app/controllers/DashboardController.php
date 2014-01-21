@@ -28,4 +28,19 @@ class DashboardController extends BaseController {
 			->with('offenses', $group->offenses);
 		
 	}
+
+	/**
+	 * Search for Section
+	 *
+	 */
+	public function search() {
+		$list = Offense::where('description', 'LIKE', '%' . Input::get('description') . '%')
+						->orderBy('group_id', 'asc')
+						->orderBy('section', 'asc')
+						->get();
+
+		return View::make('dashboard.search')
+			->with('offenses', $list);
+		
+	}
 }
