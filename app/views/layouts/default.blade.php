@@ -48,7 +48,8 @@
 					?>
 					<div class="section-container accordion" data-section="accordion">
 						<section <?php echo $controller=='DashboardController'?'class="active"':''; ?>>
-							<p class="title" data-section-title>{{ HTML::link("dashboard", "Dashboard") }}</p>
+							<p class="title" data-section-title>{{ HTML::link("dashboard/1", "Offenses") }}</p>
+								@yield('sidebar')
 						</section>
 						<section <?php echo $controller=='GroupController'?'class="active"':''; ?>>
 							<p class="title" data-section-title>{{ HTML::link("groups", "Groups") }}</p>
@@ -65,6 +66,22 @@
 								</ul>
 							</div>
 						</section>
+					</div>
+					<div class="row">
+						{{ Form::open(array('url' => 'search', 'method' => 'post', 'class' => 'custom')) }}
+						<fieldset>
+							<legend>Section Search:</legend>
+							<div class="row collapse">
+								<div class="small-8 columns">
+									{{ Form::text('description') }}
+								</div>
+								<div class="small-4 columns">
+									<span class="postfix">{{ Form::submit('SEARCH', array('class' => 'small secondary button', 'style' =>  'height: 32px; width: 100%; position: absolute; left: 0px; top: 0px;')) }}</span>
+								</div>
+							</div>
+
+						</fieldset>
+						{{ Form::close(); }}
 					</div>
 				</div>
 				<div class="large-9 columns main-content">

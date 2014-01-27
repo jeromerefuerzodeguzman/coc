@@ -4,6 +4,17 @@
 {{ $group->description }}
 @endsection
 
+@section('sidebar')
+	<div class="content" data-section-content>
+		<ul class="side-nav">
+			@foreach($groups as $group)
+			<li class="sidebar_link">{{ HTML::link("dashboard/".$group->id, strtoupper($group->description)) }}</li>
+			@endforeach
+		</ul>
+	</div>
+@endsection
+
+
 @section('content')
 	<div class="row">
 		<div class="large-12 columns">

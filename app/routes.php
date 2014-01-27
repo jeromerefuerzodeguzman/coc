@@ -14,8 +14,7 @@
 Route::get('login', 'UserController@login');
 Route::any('logout', 'UserController@logout');
 Route::post('authenticate', 'UserController@authenticate');
-Route::get('dashboard', 'DashboardController@dashboard');
-Route::get('dashboard/{id}', 'DashboardController@dashboard_viewgroup');
+Route::get('dashboard/{id}', 'DashboardController@dashboard');
 Route::post('search', 'DashboardController@search');
 
 Route::get('group', 'GroupController@index');

@@ -3,27 +3,15 @@
 class DashboardController extends BaseController {
  	
 	/**
-	 * List of offense group in list format
-	 *
-	 */
-	public function dashboard() {
-		$groups = Group::all();
-		$count = $groups->count();
-
-		return View::make('dashboard.dashboard')
-				->with('groups', $groups)
-				->with('count', $count);
-
-	}
-
-	/**
 	 * Viewing of the sections of each group
 	 *
 	 */
-	public function dashboard_viewgroup($id) {
+	public function dashboard($id) {
+		$groups = Group::all();
 		$group = Group::find($id);
 
-		return View::make('dashboard.dashboard_offenses')
+		return View::make('dashboard.offenses')
+			->with('groups', $groups)
 			->with('group', $group)
 			->with('offenses', $group->offenses);
 		
@@ -39,7 +27,10 @@ class DashboardController extends BaseController {
 						->orderBy('section', 'asc')
 						->get();
 
+		$groups = Group::all();
+
 		return View::make('dashboard.search')
+			->with('groups', $groups)
 			->with('offenses', $list);
 		
 	}

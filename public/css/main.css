@@ -93,3 +93,8 @@ table tr td {
 	font-size: 11px !important;
 
 }
+
+.sidebar_link {
+	font-size: 11px !important;
+	font-weight: bold;
+}
