@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-Offenses
+Search result for "{{ $keyword }}"
 @endsection
 
 @section('content')

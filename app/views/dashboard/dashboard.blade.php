@@ -7,11 +7,33 @@ Offenses Against
 @section('content')
 	<div class="row">
 		<div class="large-12 columns">
+			<table>
+				<?php $ctr=0; ?>
+				@foreach($groups as $group)
+				@if($ctr==0)
+					<tr>
+						<td>
+							<div class="panel callout text-center">
+								{{ HTML::link("dashboard/".$group->id, strtoupper($group->description)) }}
+							</div>
+						</td>
+					<?php $ctr++; ?>
+				@else
+						<td>
+							<div class="panel callout text-center">
+								{{ HTML::link("dashboard/".$group->id, strtoupper($group->description)) }}
+							</div>
+						</td>
+					</tr>
+					<?php $ctr=0; ?>
+				@endif
+				@endforeach
+			</table>
 			<div class="row">
 				<div class="large-6 columns">
 					{{ Form::open(array('url' => 'search', 'method' => 'post', 'class' => 'custom')) }}
 					<fieldset>
-						<legend>Section Search:</legend>
+						<legend>Search Keyword:</legend>
 						<div class="row collapse">
 							<div class="small-8 large-9 columns">
 								{{ Form::text('description') }}
@@ -25,28 +47,6 @@ Offenses Against
 					{{ Form::close(); }}
 				</div>
 			</div>
-			<table>
-				<?php $ctr=0; ?>
-				@foreach($groups as $group)
-				@if($ctr==0)
-					<tr>
-						<td>
-							<div class="panel radius callout text-center">
-								{{ HTML::link("dashboard/".$group->id, strtoupper($group->description)) }}</td>
-							</div>
-						</td>
-					<?php $ctr++; ?>
-				@else
-						<td>
-							<div class="panel radius callout text-center">
-								{{ HTML::link("dashboard/".$group->id, strtoupper($group->description)) }}</td>
-							</div>
-						</td>
-						<?php $ctr=0; ?>
-					</tr>
-				@endif
-				@endforeach
-			</table>
 		</div>
 	</div>
 @endsection

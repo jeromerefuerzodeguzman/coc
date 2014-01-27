@@ -34,12 +34,14 @@ class DashboardController extends BaseController {
 	 *
 	 */
 	public function search() {
-		$list = Offense::where('description', 'LIKE', '%' . Input::get('description') . '%')
+		$keyword = Input::get('description');
+		$list = Offense::where('description', 'LIKE', '%' . $keyword . '%')
 						->orderBy('group_id', 'asc')
 						->orderBy('section', 'asc')
 						->get();
 
 		return View::make('dashboard.search')
+			->with('keyword', $keyword)
 			->with('offenses', $list);
 		
 	}
