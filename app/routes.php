@@ -11,9 +11,12 @@
 |
 */
 
+
+
 Route::get('login', 'UserController@login');
 Route::any('logout', 'UserController@logout');
 Route::post('authenticate', 'UserController@authenticate');
+Route::get('/', 'DashboardController@dashboard');
 Route::get('dashboard/{id}', 'DashboardController@dashboard');
 Route::post('search', 'DashboardController@search');
 

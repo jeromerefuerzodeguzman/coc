@@ -6,7 +6,7 @@ class DashboardController extends BaseController {
 	 * Viewing of the sections of each group
 	 *
 	 */
-	public function dashboard($id) {
+	public function dashboard($id = 1) {
 		$groups = Group::all();
 		$group = Group::find($id);
 
@@ -14,7 +14,6 @@ class DashboardController extends BaseController {
 			->with('groups', $groups)
 			->with('group', $group)
 			->with('offenses', $group->offenses);
-		
 	}
 
 	/**

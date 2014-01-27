@@ -7,7 +7,7 @@
 		 *
 		 */
 		public function offenses() {
-			return $this->hasMany('Offense')->orderBy('section');
+			return $this->hasMany('Offense')->orderBy(DB::raw('ABS(section)'));
 		}
 
 

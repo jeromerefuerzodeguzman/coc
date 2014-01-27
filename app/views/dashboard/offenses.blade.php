@@ -8,7 +8,7 @@
 	<div class="content" data-section-content>
 		<ul class="side-nav">
 			@foreach($groups as $group)
-			<li class="sidebar_link">{{ HTML::link("dashboard/".$group->id, strtoupper($group->description)) }}</li>
+			<li class="sidebar_link">{{ HTML::link("dashboard/".$group->id, ucwords(strtolower(substr(strtoupper($group->description), 17)))) }}</li>
 			@endforeach
 		</ul>
 	</div>
