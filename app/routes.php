@@ -34,3 +34,7 @@ Route::post('action/add', 'ActionController@add');
 Route::any('registration', 'UserController@registration');
 Route::any('manage_users', 'UserController@manage_users');
 Route::post('add_user', 'UserController@add_user');
+
+Route::get('offense/{id}/getinfo', 'OffenseController@getinfo');
+Route::post('offense/update', 'OffenseController@update_actions');
+
