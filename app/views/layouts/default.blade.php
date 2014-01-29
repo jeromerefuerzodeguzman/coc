@@ -72,7 +72,7 @@
 					<div class="row">
 						{{ Form::open(array('url' => 'search', 'method' => 'post', 'class' => 'custom')) }}
 						<fieldset>
-							<legend>Section Search:</legend>
+							<legend>Keyword Search:</legend>
 							<div class="row collapse">
 								<div class="small-8 columns">
 									{{ Form::text('description') }}
